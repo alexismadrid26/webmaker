@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Sistemas Expertos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/bootstrap4/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/fontawesome-free-5.1.0-web/css/all.css" type="text/css">
+    <link rel="stylesheet" href="/css/estilos.css" type="text/css">
+    <link rel="stylesheet" href="/css/simple-sidebar.css" type="text/css">
+</head>
+
+<body>
+    <div class="d-flex toggled" id="wrapper">
+
+        <!-- Sidebar -->
+        <div class="border-right text-white" id="sidebar-wrapper">
+            <div class="sidebar-heading">
+                <div class="text-center">
+                    <img alt="Logo" src="img/img-20.png" style="width:75px;">
+                    </img>
+                    <p class="text-danger">WEB MAKER</p>
+                </div>
+            </div>
+            <div class="list-group list-group-flush">
+                <button class="list-group-item list-group-item-action text-light" id="btn-dashboard"
+                    onclick="mostrarDashboard();" style="background-color: #242939;"><i class="fab fa-envira"></i>
+                    Dashboard
+                </button>
+                <button class="list-group-item list-group-item-action text-light" id="btn-compartidos"
+                    style="background-color: #242939;"><i class="fas fa-link"></i> Compartidos
+                </button>
+                <button class="list-group-item list-group-item-action text-light" id="btn-proyectos"
+                    onclick="mostrarProyectos();" style="background-color: #242939;"><i class="fas fa-folder"></i>
+                    Proyectos
+                </button>
+                <button class="list-group-item list-group-item-action text-light" id="btn-estado"
+                    style="background-color: #242939;"><i class="fas fa-question-circle"></i> Estado
+                </button>
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <button class="btn btn-sm btn-dark" id="menu-toggle"><i class="fas fa-list-ul"></i></button>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <button class="btn btn-sm btn-light" id="btn-notificaciones" name="notificaciones"
+                                type="button"><i class="far fa-bell fa-2x"></i></button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-sm btn-light" id="btn-config" name="config" type="button"><i
+                                    class="fas fa-cog fa-2x" style="color: slategrey"></i></button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="d-inline btn btn-sm btn-light" id="btn-foto-perfil" name="foto-perfil"
+                                type="button"><img src="img/img-32.jpg" alt="img-31" class="rounded-circle" height="28"
+                                    width="28">
+                                <p class="d-inline text-secondary"><strong>Erik Killmonger</strong></p>
+                            </button>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Perfil</a>
+                                <a class="dropdown-item" href="#">Registro de actividades</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Preferencia de noticias</a>
+                                <a class="dropdown-item" href="home.html">Salir</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="container-fluid jumbotron">
+                <div id="id-proyecto-abierto" style="display: none;">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="border-right text-white" id="sidebar-wrapper1">
+                                <div class="sidebar-heading1">
+                                    <p class="h5 text-dark">Sistemas Expertos</p>
+                                </div>
+                                <div class="list-group1 list-group-flush1">
+                                    <button class="list-group-item list-group-item-action text-dark"><i
+                                            class="fas fa-angle-right"></i>
+                                        modules
+                                    </button>
+                                    <button class="list-group-item list-group-item-action text-dark"><i
+                                            class="fas fa-angle-right"></i>
+                                        public
+                                    </button>
+                                    <button class="list-group-item list-group-item-action text-dark"
+                                        id="id-contenido-archivo" onclick="mostrarAbrirArchivo();"><i
+                                            class="fab fa-node-js"></i>
+                                        index.js
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <textarea name="text-editor" id="text-editor" cols="120" rows="100"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div id="id-proyectos" style="display:none;">
+                    <div class="text-right mb-3">
+                        <button class="btn btn-sm btn-success" id="btn-proyecto-1" data-toggle="modal"
+                            data-target="#modalNuevoProyecto" name="proyecto-1" type="button">
+                            <p class="d-inline"><strong>Nuevo Proyecto</strong></p>
+                        </button>
+
+                        <div class="modal fade" id="modalNuevoProyecto" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Nueva Proyecto </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label for="name-proyect"></label>
+                                            <input type="text" class="form-control" id="name-proyect"
+                                                placeholder="Nombre">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                            onclick="Crear();">Crear</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="id-proyectos-seccion">
+                        <div class="col-xl-4 col-md-6 col-sm-12">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <button class="btn btn-sm btn-light" id="btn-proyecto-1" name="proyecto-1"
+                                        type="button" onclick="mostrarAbrirProyecto();"><i
+                                            class="fas fa-folder-open fa-2x"></i>
+                                        <p class="d-inline text-dark"><strong>Sistemas Expertos</strong></p>
+                                    </button>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <p class="text-secondary"><strong>Último acceso: hace 2 días</strong></p>
+                                    <p class="text-secondary"><strong>Tamaño: 30MB</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6 col-sm-12">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <button class="btn btn-sm btn-light" id="btn-proyecto-2" name="proyecto-1"
+                                        type="button"><i class="fas fa-folder-open fa-2x"></i>
+                                        <p class="d-inline text-dark"><strong>POO</strong></p>
+                                    </button>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <p class="text-secondary"><strong>Último acceso: hace 10 días</strong></p>
+                                    <p class="text-secondary"><strong>Tamaño: 160MB</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6 col-sm-12">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <button class="btn btn-sm btn-light" id="btn-proyecto-3" name="proyecto-1"
+                                        type="button"><i class="fas fa-folder-open fa-2x"></i>
+                                        <p class="d-inline text-dark"><strong>Ingenieria en Software</strong></p>
+                                    </button>
+                                    <button class="btn btn-sm btn-light" id="btn-proyecto-3-edit" name="proyecto-1"
+                                        type="button"><i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <p class="text-secondary"><strong>Último acceso: hace 20 días</strong></p>
+                                    <p class="text-secondary"><strong>Tamaño: 10MB</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid mb-3" id="id-principal-login" style="display:block;">
+                    <div class="row">
+                        <div class="col-xl-6 col-md-6 col-sm-12">
+                            <div class="card mb-3">
+                                <div class="card-header" style="background-color: white">
+                                    <p class="h5">Autor</p>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                        Placeat perspiciatis quae delectus! Fugit, non saepe?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-6 col-sm-12">
+                            <div class="card mb-3">
+                                <div class="card-header" style="background-color: white">
+                                    <p class="h5">Tecnologías</p>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim
+                                        dicta, eos minima ea eum eligendi?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-6 col-sm-12">
+                            <div class="card mb-3">
+                                <div class="card-header" style="background-color: white">
+                                    <p class="h5">Consumo</p>
+                                </div>
+                                <div class="card-body text-center">
+                                    <p class="display-3 card-text"><i class="fas fa-chart-pie" style="color: teal"></i>
+                                        0.5GB/3GB</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-6 col-sm-12">
+                            <div class="card mb-3">
+                                <div class="card-header" style="background-color: white">
+                                    <p class="h5">Anuncios</p>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque
+                                        molestias magnam deleniti! Quam saepe, suscipit quia numquam ducimus hic
+                                        recusandae molestiae, magnam fugiat in ipsum. Nesciunt mollitia ut, sit
+                                        blanditiis delectus ss!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="card mb-3">
+                                <div class="card-header text-center" style="background-color: white">
+                                    <p class="h5">Tipo de Plan</p>
+                                </div>
+                                <div class="card-body text-center">
+                                    <p class="card-text display-5"><strong>FREE</strong>
+                                    </p>
+                                    <p class="card-text">Compartir proyectos: 10 usuarios.
+                                    </p>
+                                    <p class="card-text">3GB Almacenamiento.
+                                    </p>
+                                    <button class="btn btn-success" id="btn-nuevo-plan" name="nuevo-plan"
+                                        type="button">Adquirir nuevo plan</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-6 col-sm-12">
+                            <div class="card mb-3">
+                                <div class="card-header" style="background-color: white">
+                                    <p class="h5">Estadisticas</p>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text"><i class="fab fa-java fa-2x"></i> Registro alumnos</p>
+                                    <p class="card-text"><i class="fab fa-js fa-2x"></i> Tarea-POO</p>
+                                    <p class="card-text"><i class="fab fa-html5 fa-2x"></i> Trabajo-jefe</p>
+                                    <p class="card-text"><i class="fab fa-css3-alt fa-2x"></i> Trabajo-jefe-style</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-6 col-sm-12">
+                            <div class="card mb-3">
+                                <div class="card-header" style="background-color: white">
+                                    <p class="h5">Ultimo acceso</p>
+                                </div>
+                                <div class="card-body text-center">
+                                    <p class="h4 card-text"><i class="fas fa-map-marker-alt fa-1x"
+                                            style="color: rgb(62, 65, 231)"></i> Tegucigalpa, Francisco Morazán</p>
+                                    <p class="display-4 card-text"><i class="far fa-clock fa-1x"></i> 9:20AM - 10:00AM
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+
+
+    <script src="/js/jquery-3.3.1.js" type="text/javascript">
+    </script>
+    <script src="/js/controlador.js" type="text/javascript">
+    </script>
+    <script src="/js/bootstrap4/bootstrap.min.js" type="text/javascript">
+    </script>
+    <script href="/css/fontawesome-free-5.1.0-web/js/all.js" rel="stylesheet" type="text/css">
+    </script>
+    <script src="/js/bootstrap4/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Sistemas Expertos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap4/bootstrap.min.css" type="text/css">
+    <link href="css/fontawesome-free-5.1.0-web/css/all.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/estilos.css" type="text/css">
+</head>
+
+<body id="body-login">
+    <div id="body-login-img">
+        <nav class="navbar navbar-expand-sm navbar-dark">
+            <div class="container-fluid">
+                <div class="d-table-cell align-middle text-center pr-md-3">
+                    <a class="navbar-brand" href="home.html">
+                        <img alt="Logo" src="img/img-20.png" style="width:75px;">
+                        </img>
+                        <p class="h5 text-danger">WEB MAKER</p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <div class="jumbotron" id="formulario-login">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1>Sign In</h1>
+                        <div class="form-login">
+                            <div class="form-group">
+                                <label class="sr-only" for="username">Username</label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="fas fa-user"></i></div>
+                                    </div>
+                                    <input type="text" class="form-control" id="username" placeholder="Username">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="password">Username</label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="fas fa-key"></i></div>
+                                    </div>
+                                    <input type="password" class="form-control" id="password" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="remember">
+                                    <label class="form-check-label text-dark" for="remember">
+                                        Remember me
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group text-center">
+                                <button class="btn btn-secondary" id="btn-login" name="login" type="submit"
+                                    onclick="irPrincipal();"><i class="fas fa-sign-in-alt"></i> Sing In</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-sm-12">
+                        <p class="h5 text-dark">ó</p>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group ">
+                            <button class="btn btn-block text-white" id="btn-login-facebook" name="facebook"
+                                type="button" style="background-color: blue">
+                                <i class="fab fa-facebook fa-1x"></i> | Entrar con Facebook
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <button class="btn btn-block btn-primary " id="btn-login-twitter" name="twitter"
+                                type="button">
+                                <i class="fab fa-twitter fa-1x"></i> | Entrar con Twitter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <a class="text-dark" href="#">¿Has olvidado tu contraseña?</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/jquery-3.3.1.js" type="text/javascript">
+    </script>
+    <script src="/js/controlador.js" type="text/javascript">
+    </script>
+    <script src="/js/bootstrap4/bootstrap.min.js" type="text/javascript">
+    </script>
+    <script href="/css/fontawesome-free-5.1.0-web/js/all.js" rel="stylesheet" type="text/css">
+    </script>
+
+</body>
+
+</html>
